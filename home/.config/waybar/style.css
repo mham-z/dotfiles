@@ -1,0 +1,200 @@
+@keyframes blink-warning {
+	90% {
+		color: white;
+	}
+
+	to {
+		color: white;
+	}
+}
+
+@keyframes blink-critical {
+	50% {
+		color: orange;
+	}
+
+	to {
+		color: orange;
+	}
+}
+
+@keyframes nm-blink-critical {
+	20% {
+		color: white;
+	}
+
+	to {
+		color: #e5a50a;
+	}
+}
+
+@keyframes ws-blink-critical {
+	20% {
+		color: #888888;
+		text-shadow: 0 0;
+	}
+
+	to {
+		color: #e5a50a;
+		text-shadow: 0 0 2px #e5a50a, 0 0 4px #e5a50a, 0 0 6px #e5a50a, 0 0 8px #e5a50a, 0 0 10px #e5a50a;
+	}
+}
+
+
+/* -----------------------------------------------------------------------------
+ * Base styles
+ * -------------------------------------------------------------------------- */
+
+/* Reset all styles */
+* {
+	border: none;
+	border-radius: 0;
+	min-height: 0px;
+	margin: 0px;
+	padding: 2px 0px 2px 0px;
+	background: rgba(0, 0, 0, 0);
+}
+
+/* The whole bar */
+#waybar {
+	border-radius: 0px 16px 16px 0px;
+	background: rgba(0, 0, 6, 0.8);
+	border: 0px solid rgba(0, 0, 6, .1);
+	border-style: solid solid solid hidden;
+	color: white;
+	font-family: Adwaita Sans, Adwaita Mono Nerd Font, sans-serif;
+	font-size: 16px;
+}
+tooltip {
+	background: rgba(0, 0, 6, 0.8);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 9px;
+	box-shadow: none;
+}
+tooltip label {
+	color: white;
+	font-size: 14px;
+	padding: 3px 5px;
+	transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
+	
+	text-shadow: none;
+}
+
+/*TOP*/
+#clock {
+	font-weight: bold;
+	font-size: 14px;
+	padding-top: 7px;
+	padding-right: 2px;
+}
+
+/*BOTTOM*/
+#battery,
+#network,
+#pulseaudio,
+#menu,
+#bluetooth,
+#idle_inhibitor,
+#custom-hyprpicker,
+#custom-backlight,
+#tray {
+  font-size: 20px;
+  padding-right: 2px;
+  padding-bottom: 5px;
+}
+
+#battery {padding-bottom: 6px; padding-right: 1px}
+#network {padding-right: 7px}
+#pulseaudio {padding-right: 3px}
+#menu {padding-bottom: 0px; padding-right: 4px;}
+#bluetooth {padding-right: 0px; padding-bottom: 0px; padding-left: 2px}
+#tray {padding-left: 6px}
+
+/* -----------------------------------------------------------------------------
+ * Module styles
+ * -------------------------------------------------------------------------- */
+
+#bluetooth.disabled {
+	color: #888888;
+}
+
+#bluetooth.on {
+	color: white;
+}
+
+#bluetooth.off {
+	color: #888888;
+}
+
+#bluetooth.connected {
+	color: #3584e4;
+}
+
+#battery {
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+#battery.warning {
+	color: orange;
+}
+
+#battery.critical {
+	color: red;
+}
+
+/*don't think i need a nagging warning in the corner of the screen for this*/
+/*#battery.warning.discharging {
+	animation-name: blink-warning;
+	animation-duration: 1s;
+	animation-direction: alternate;
+	animation-timing-function: steps(15);
+}*/
+
+#battery.critical.discharging {
+	animation-name: blink-critical;
+	animation-duration: .2s;
+	animation-direction: alternate;
+	animation-timing-function: steps(10);
+}
+
+#network.disconnected {
+	animation-name: nm-blink-critical;
+	animation-iteration-count: infinite;
+	animation-duration: 0.5s;
+	animation-direction: alternate;
+	animation-timing-function: steps(15);
+}
+
+#workspaces button {
+	padding: 1px;
+	color: #888888;
+	border-radius: 0%;
+	background-color: transparent;
+	font-size: 14px;
+	transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
+	font-weight: bold;
+}
+
+/*#workspaces button:nth-child(1) { background-color: #1A5FB4; }
+#workspaces button:nth-child(2) { background-color: #26A269; }
+#workspaces button:nth-child(3) { background-color: #E5A50A; }
+#workspaces button:nth-child(4) { background-color: #C64600; }
+#workspaces button:nth-child(5) { background-color: #A51D2D; }
+#workspaces button:nth-child(6) { background-color: #613583; }
+#workspaces button:nth-child(7) { background-color: #63452C; }*/
+
+#workspaces button.active {
+	color: white;
+	font-weight: bolder;
+}
+
+#workspaces button.urgent {
+	animation-name: ws-blink-critical;
+	animation-iteration-count: infinite;
+	animation-duration: 0.5s;
+	animation-direction: alternate;
+	font-weight: bolder;
+	animation-timing-function: steps(30);
+}
