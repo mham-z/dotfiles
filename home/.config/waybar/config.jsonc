@@ -43,8 +43,6 @@
 	// Modules
 	// -------------------------------------------------------------------------
 
-
-
 	"group/menu": {
 		"orientation": "inherit",
 		"drawer": {
@@ -96,8 +94,8 @@
 	"custom/backlight": {
 		"interval": "once",
 		"format": "󰖨",
-		"on-scroll-up": "bash ~/.dotfiles/home/.config/dunstosd brightness_up",
-		"on-scroll-down": "bash ~/.dotfiles/home/.config/dunstosd brightness_down",
+		"on-scroll-up": "brightnessctl -e2.4 -n15 set 5%+ && ~/dotfiles/home/.config/hypr/scripts/swayosd-fake-brightness",
+		"on-scroll-down": "brightnessctl -e2.4 -n15 set 5%- && ~/dotfiles/home/.config/hypr/scripts/swayosd-fake-brightness",
 		"tooltip": true,
 		"tooltip-format": "Brightness"
 	},        
@@ -155,11 +153,11 @@
 		},
 		"tooltip-format": "{volume}%",
 		"max-volume": 200,
-		"on-click": "bash ~/.dotfiles/home/.config/dunstosd volume_mute",
+		"on-click": "swayosd-client --output-volume mute-toggle",
 		"on-click-right": "pavucontrol",
-		"on-click-middle": "playerctl play-pause",
-		"on-scroll-down": "bash ~/.dotfiles/home/.config/dunstosd volume_down",
-		"on-scroll-up": "bash ~/.dotfiles/home/.config/dunstosd volume_up"
+		"on-click-middle": "swayosd-client --playerctl play-pause",
+		"on-scroll-down": "swayosd-client --output-volume lower --max-volume 150",
+		"on-scroll-up": "swayosd-client --output-volume raise --max-volume 150"
 	},
 
 	"bluetooth": {
