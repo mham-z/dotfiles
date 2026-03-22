@@ -103,11 +103,13 @@ tooltip label {
   padding-bottom: 5px;
 }
 
+#custom-hyprpicker {padding-bottom: 0px;}
+#custom-backlight {padding-right: 6px;}
 #battery {padding-bottom: 6px; padding-right: 1px}
 #network {padding-right: 7px}
 #pulseaudio {padding-right: 3px}
-#menu {padding-bottom: 0px; padding-right: 4px;}
-#bluetooth {padding-right: 0px; padding-bottom: 0px; padding-left: 2px}
+#menu {padding-bottom: 0px; padding-right: 2px;}
+#bluetooth {padding-right: 2px; padding-bottom: 5px; padding-left: 0px}
 #tray {padding-left: 6px}
 
 /* -----------------------------------------------------------------------------
