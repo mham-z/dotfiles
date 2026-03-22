@@ -13,6 +13,10 @@ configuration {
         sorting-method:    "name";
         directories-first: true;
     }
+
+    hover-select: true;
+	me-select-entry: "MousePrimary";
+	me-accept-entry: "!MousePrimary";
 }
 
-@theme "~/.config/rofi/side.rasi"
+@theme "~/.config/rofi/topbar.rasi"
