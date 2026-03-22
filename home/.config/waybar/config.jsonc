@@ -31,9 +31,9 @@
 	],
 	"modules-right": [
 		"group/menu",
-		
+		"custom/backlight",
 		"pulseaudio",
-		
+		"bluetooth",
 		"network",
 		"battery"
 	],
@@ -46,18 +46,16 @@
 	"group/menu": {
 		"orientation": "inherit",
 		"drawer": {
-			"transition-duration": 100,
+			"transition-duration": 200,
 			"children-class": "iconsmenu",
 			"transition-left-to-right": false,
-			"click-to-reveal": true
+			"click-to-reveal": false
 		},
 		"modules": [
 			"custom/menumain",
 			"tray",
-			"custom/backlight",
-			"custom/hyprpicker",
 			"idle_inhibitor",
-			"bluetooth"
+			"custom/hyprpicker"
 		]
 	},
 
