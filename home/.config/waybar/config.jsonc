@@ -88,7 +88,7 @@
                     "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"]
                 },
 		"tooltip": true,
-		"tooltip-format": "Percentage: {capacity}%\nHealth: {health}%\nPower draw: {power}W\n{timeTo}",
+		"tooltip-format": "Percentage: {capacity}%\nHealth: {health}%\nPower draw: {power}W\n{timeTo}"
 	},
 
 	"custom/backlight": {
