@@ -57,7 +57,7 @@
 
 /* The whole bar */
 #waybar {
-	border-radius: 0px 16px 16px 0px;
+	border-radius: 0px 6px 6px 0px;
 	background: rgba(0, 0, 6, 0.8);
 	border: 0px solid rgba(0, 0, 6, .1);
 	border-style: solid solid solid hidden;
@@ -166,7 +166,7 @@ tooltip label {
 	animation-iteration-count: infinite;
 	animation-duration: 0.5s;
 	animation-direction: alternate;
-	animation-timing-function: steps(15);
+	animation-timing-function: steps(10);
 }
 
 #workspaces button {
@@ -175,7 +175,7 @@ tooltip label {
 	border-radius: 0%;
 	background-color: transparent;
 	font-size: 14px;
-	transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
+	/* transition: color 0.05s ease-in-out, background-color 0.1s ease-in-out; */
 	font-weight: bold;
 }
 
@@ -195,8 +195,8 @@ tooltip label {
 #workspaces button.urgent {
 	animation-name: ws-blink-critical;
 	animation-iteration-count: infinite;
-	animation-duration: 0.5s;
+	animation-duration: 0.3s;
 	animation-direction: alternate;
 	font-weight: bolder;
-	animation-timing-function: steps(30);
+	animation-timing-function: steps(10);
 }
