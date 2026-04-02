@@ -124,7 +124,7 @@
 		"format-ethernet": "", // Icon: ethernet
 		"format-disconnected": "󰤮",
 		"tooltip-format": "{ifname}: {ipaddr}\nSSID: {essid}\nFrequency: {frequency}\nSignal: {signalStrength}% ({signaldBm})",
-		"on-click": "iwgtk",
+		"on-click": "kitty --class=\"nmtui\" nmtui",
 		"format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
 	},
 
