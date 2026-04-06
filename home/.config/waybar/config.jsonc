@@ -16,27 +16,31 @@
 	"position": "left",
 	"mode": "dock",
 	"start_hidden": false,
+	
+	"width": 42,
 
-	// If height property would be not present, it'd be calculated dynamically
-	"width": 40,
-
-	"margin-left": 0,
+	"spacing": 2,
+	"margin-left": 10,
 	"margin-top": 10,
 	"margin-right": 0,
 	"margin-bottom": 10,
 
-	"ipc": true,
-
 	"modules-left": [
-		"clock#time"
+		"clock#time",
+		"custom/notification",
+		"power-profiles-daemon",
+		"custom/privacy-dots",
+		"tray"
 	],
 	"modules-center": [
 		"hyprland/workspaces"
 	],
 	"modules-right": [
-		"group/menu",
+		//"group/menu",
+		"idle_inhibitor",
 		"custom/backlight",
-		"pulseaudio",
+		"pulseaudio#input",
+		"pulseaudio#output",
 		"bluetooth",
 		"network",
 		"battery"
@@ -46,6 +50,18 @@
 	// -------------------------------------------------------------------------
 	// Modules
 	// -------------------------------------------------------------------------
+
+	"power-profiles-daemon": {
+		"format": "{icon}",
+		"tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+		"tooltip": true,
+		"format-icons": {
+			"default": "󰾅",
+			"performance": "󰓅",
+			"balanced": "󰾅",
+			"power-saver": "󰾆"
+		}
+	},
 
 	"group/menu": {
 		"orientation": "inherit",
@@ -57,17 +73,19 @@
 		},
 		"modules": [
 			"custom/menumain",
-			"tray",
-			"idle_inhibitor",
-			"custom/hyprpicker"
+			"tray"
 		]
 	},
 
 	"custom/menumain": {
 		"interval": "once",
 		"format": "󰇘",
-		"tooltip": true,
-		"tooltip-format": "Extras"
+		"tooltip": false
+	},
+
+	"tray": {
+		"icon-size": 20,
+		"spacing": 8
 	},
 	
 	"idle_inhibitor": {
@@ -101,18 +119,40 @@
 		"tooltip": true,
 		"tooltip-format": "Brightness"
 	},        
-        
+    
+	"custom/notification": {
+		"tooltip": false,
+		"format": "{icon}",
+		"format-icons": {
+			"notification": "󱅫",
+			"none": "󰂚",
+			"dnd-notification": "󰂜",
+			"dnd-none": "󰂜"
+		},
+		"return-type": "json",
+		"exec-if": "which swaync-client",
+		"exec": "swaync-client -swb",
+		"on-click": "sleep 0.1 && swaync-client -t -sw",
+		"on-click-right": "sleep 0.1 && swaync-client -d -sw",
+		"escape": true
+	},
+
+	"custom/privacy-dots": {
+		"exec": "~/dotfiles/home/.config/waybar/privacy-dots",
+		"return-type": "json",
+		"interval": 5,
+		"format": "{text}",
+		"tooltip": true,
+		"escape": false,
+		"markup": "pango"
+	},
+
 	"custom/hyprpicker": {
 		"interval": "once",
 		"format": "󰈊",
 		"on-click": "color=$(hyprpicker -a 2>/dev/null) && [[ $color == \\#* ]] && notify-send \"Hyprpicker\" \"Color: $color\nThis has been saved to your clipboard.\"",
 		"tooltip": true,
 		"tooltip-format": "Hyprpicker"
-	},
-
-	"tray": {
-		"icon-size": 21,
-		"spacing": 8
 	},
 
 	"clock#time": {
@@ -124,9 +164,12 @@
 
 	"network": {
 		"interval": 5,
+
+		"format": "󰀂",
 		"format-wifi": "{icon}", // Icon: wifi
-		"format-ethernet": "", // Icon: ethernet
+		"format-ethernet": "󰈀", // Icon: ethernet
 		"format-disconnected": "󰤮",
+
 		"tooltip-format": "{ifname}: {ipaddr}\nSSID: {essid}\nFrequency: {frequency}\nSignal: {signalStrength}% ({signaldBm})",
 		"on-click": "kitty --class=\"nmtui\" nmtui",
 		"format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
@@ -136,16 +179,16 @@
 		"all-outputs": false,
 		"disable-scroll": false,
 		"persistent-workspaces": false,
-		"format": "{icon}",
+		"format": "",
 		"format-icons": {
-			"active": "",
-			"default": ""
+			"active": "",//
+			"default": ""//
 		},
 		"on-scroll-down": "hyprctl dispatch workspace e+1",
 		"on-scroll-up": "hyprctl dispatch workspace e-1"
 	},
 
-	"pulseaudio": {
+	"pulseaudio#output": {
 		"scroll-step": 5,
 		"format": "{icon}",
 		"format-bluetooth": "{icon}",
@@ -162,10 +205,24 @@
 		"on-scroll-up": "swayosd-client --output-volume raise --max-volume 150"
 	},
 
+	"pulseaudio#input": {
+		"scroll-step": 5,
+		"format-source": "󰍬",
+		"format-source-muted": "󰍭",
+		"format": "{format_source}",
+		"tooltip-format": "{volume}%",
+		"max-volume": 200,
+		"on-click": "swayosd-client --output-volume mute-toggle",
+		"on-click-right": "pavucontrol",
+		"on-click-middle": "swayosd-client --playerctl play-pause",
+		"on-scroll-down": "swayosd-client --output-volume lower --max-volume 150",
+		"on-scroll-up": "swayosd-client --output-volume raise --max-volume 150"
+	},
+
 	"bluetooth": {
 		"format": "󰂯",
 		"format-disabled": "󰂲",
-		"format-connected": "󰂯",
+		"format-connected": "󰂱",
 		"tooltip-format": "{controller_alias}\t{controller_address}",
 		"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
 		"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
