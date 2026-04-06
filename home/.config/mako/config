@@ -1,0 +1,28 @@
+anchor=center-left
+width=400
+height=110
+outer-margin=5
+margin=5
+padding=7,10,7,10
+
+default-timeout=5000
+
+background-color=#1f1d2e
+
+border-size=1
+border-radius=10
+border-color=#26233a
+
+text-color=#e0def4
+font=Adwaita Sans 12
+
+progress-color=over #ffffff15
+
+format=<b>%s</b>\n%b
+
+[urgency=high]
+background-color=#c9456a
+default-timeout=0
+
+[grouped]
+format=<b>%s</b>\n%b
