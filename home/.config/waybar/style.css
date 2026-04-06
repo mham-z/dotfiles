@@ -1,12 +1,4 @@
-@keyframes blink-warning {
-	90% {
-		color: white;
-	}
-
-	to {
-		color: white;
-	}
-}
+@import "./colors.css";
 
 @keyframes blink-critical {
 	50% {
@@ -20,23 +12,23 @@
 
 @keyframes nm-blink-critical {
 	20% {
-		color: white;
+		color: @iris;
 	}
 
 	to {
-		color: #e5a50a;
+		color: @gold;
 	}
 }
 
-@keyframes ws-blink-critical {
+@keyframes ws-urgent-blink {
 	20% {
-		color: #888888;
-		text-shadow: 0 0;
+		background: @muted;
+		opacity: inherit;
 	}
 
 	to {
-		color: #e5a50a;
-		text-shadow: 0 0 2px #e5a50a, 0 0 4px #e5a50a, 0 0 6px #e5a50a, 0 0 8px #e5a50a, 0 0 10px #e5a50a;
+		background: @gold;
+		opacity: 1;
 	}
 }
 
@@ -47,23 +39,17 @@
 
 /* Reset all styles */
 * {
-	border: none;
-	border-radius: 0;
-	min-height: 0px;
-	margin: 0px;
-	padding: 2px 0px 2px 0px;
-	background: rgba(0, 0, 0, 0);
+	font-family: Adwaita Mono Nerd Font;
+	font-size: 20px;
 }
 
 /* The whole bar */
 #waybar {
-	border-radius: 0px 6px 6px 0px;
-	background: rgba(0, 0, 6, 0.8);
-	border: 0px solid rgba(0, 0, 6, .1);
-	border-style: solid solid solid hidden;
+	border-radius: 999px;
+	background: @surface;
+	border: 1px solid @overlay;
+	border-style: solid solid solid solid;
 	color: white;
-	font-family: Adwaita Sans, Adwaita Mono Nerd Font, sans-serif;
-	font-size: 16px;
 }
 tooltip {
 	background: rgba(0, 0, 6, 0.8);
@@ -76,60 +62,23 @@ tooltip label {
 	font-size: 14px;
 	padding: 3px 5px;
 	transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
-	
+	font-family: Adwaita Sans;
 	text-shadow: none;
 }
 
-/*TOP*/
-#clock {
-	font-weight: bold;
-	font-size: 14px;
-	padding-top: 7px;
-	padding-right: 2px;
-}
-
-/*BOTTOM*/
-#battery,
-#network,
-#pulseaudio,
-#menu,
-#bluetooth,
-#idle_inhibitor,
-#custom-hyprpicker,
-#custom-backlight,
-#tray {
-  font-size: 20px;
-  padding-right: 2px;
-  padding-bottom: 5px;
-}
-
-#custom-hyprpicker {padding-bottom: 0px;}
-#custom-backlight {padding-right: 6px;}
-#battery {padding-bottom: 6px; padding-right: 1px}
-#network {padding-right: 7px}
-#pulseaudio {padding-right: 3px}
-#menu {padding-bottom: 0px; padding-right: 2px;}
-#bluetooth {padding-right: 2px; padding-bottom: 5px; padding-left: 0px}
-#tray {padding-left: 6px}
 
 /* -----------------------------------------------------------------------------
  * Module styles
  * -------------------------------------------------------------------------- */
 
-#bluetooth.disabled {
-	color: #888888;
-}
+/* Battery */
 
-#bluetooth.on {
-	color: white;
-}
-
-#bluetooth.off {
-	color: #888888;
-}
-
-#bluetooth.connected {
-	color: #3584e4;
+#battery {
+    background: @overlay;
+	color: @iris;
+    border-radius: 4px 4px 21px 21px;
+    padding: 5px 5px 6px 5px;
+    margin: 0px 4px 4px 4px;
 }
 
 #battery {
@@ -139,26 +88,36 @@ tooltip label {
 }
 
 #battery.warning {
-	color: orange;
+	color: @gold;
+}
+
+#battery.warning.charging {
+	color: @iris;
 }
 
 #battery.critical {
-	color: red;
+	color: @love;
 }
 
-/*don't think i need a nagging warning in the corner of the screen for this*/
-/*#battery.warning.discharging {
-	animation-name: blink-warning;
-	animation-duration: 1s;
-	animation-direction: alternate;
-	animation-timing-function: steps(15);
-}*/
+#battery.critical.charging {
+	color: @iris;
+}
 
 #battery.critical.discharging {
 	animation-name: blink-critical;
 	animation-duration: .2s;
 	animation-direction: alternate;
 	animation-timing-function: steps(10);
+}
+
+/* NetworkManger */
+
+#network {
+    background: @overlay;
+	color: @iris;
+    border-radius: 4px 4px 4px 4px;
+    padding: 5px 10px 4px 5px; /* TOP RIGHT BOTTOM LEFT */
+    margin: 0px 4px 0px 4px;
 }
 
 #network.disconnected {
@@ -169,34 +128,182 @@ tooltip label {
 	animation-timing-function: steps(10);
 }
 
-#workspaces button {
-	padding: 1px;
-	color: #888888;
-	border-radius: 0%;
-	background-color: transparent;
-	font-size: 14px;
-	/* transition: color 0.05s ease-in-out, background-color 0.1s ease-in-out; */
-	font-weight: bold;
+/* Bluetooth */
+
+#bluetooth {
+    background: @overlay;
+	color: @iris;
+    border-radius: 21px 21px 4px 4px;
+    padding: 7px 5px 5px 5px; /* TOP RIGHT BOTTOM LEFT */
+    margin: 0px 4px 0px 4px;
 }
 
-/*#workspaces button:nth-child(1) { background-color: #1A5FB4; }
-#workspaces button:nth-child(2) { background-color: #26A269; }
-#workspaces button:nth-child(3) { background-color: #E5A50A; }
-#workspaces button:nth-child(4) { background-color: #C64600; }
-#workspaces button:nth-child(5) { background-color: #A51D2D; }
-#workspaces button:nth-child(6) { background-color: #613583; }
-#workspaces button:nth-child(7) { background-color: #63452C; }*/
+#bluetooth.disabled {
+	color: #888888;
+}
+
+#bluetooth.on {
+	color: @iris;
+}
+
+#bluetooth.off {
+	color: @muted;
+}
+
+#bluetooth.connected {
+	color: @iris;
+	padding: 7px 7px 5px 5px; /* Weird shifting to the right fix */
+}
+
+/* PulseAudio */
+
+#pulseaudio.output {
+    background: @overlay;
+	color: @rose;
+    border-radius: 4px 4px 21px 21px;
+    padding: 5px 6px 6px 5px;
+    margin: 0px 4px 4px 4px;
+}
+
+#pulseaudio.input {
+    background: @overlay;
+	color: @rose;
+    border-radius: 4px 4px 4px 4px;
+    padding: 5px 5px 4px 5px;
+    margin: 0px 4px 0px 4px;
+}
+
+/* custom/backlight */
+
+#custom-backlight {
+    background: @overlay;
+	color: @rose;
+    border-radius: 4px 4px 4px 4px;
+    padding: 5px 10px 5px 5px;
+    margin: 0px 4px 0px 4px;
+}
+
+/* Idle Inhibitor */
+
+#idle_inhibitor {
+    background: @overlay;
+	color: @rose;
+    border-radius: 21px 21px 4px 4px;
+    padding: 9px 8px 5px 5px; /* TOP RIGHT BOTTOM LEFT */
+    margin: 0px 4px 0px 4px;
+}
+
+/* custom/menumain */
+
+#custom-menumain {
+    background: transparent;
+	color: @text;
+    border-radius: 40px;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 8px 4px 8px;
+}
+
+/* Tray */
+
+#tray {
+	margin-top: 8px;
+}
+
+#tray menu {
+	background: @base;
+	border-radius: 7px;
+	padding: 3px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+	border: 1px solid @highlightMed;
+}
+
+#tray menuitem {
+	background: @surface;
+	border-radius: 3px;
+	margin: 1px;
+	padding: 4px;
+}
+
+#tray menuitem label {
+	font-size: 15px;
+	padding: 0px 3px 0px 3px;
+	font-family: Adwaita Sans;
+}
+
+#tray menuitem:hover {
+    background: @highlightLow;
+}
+
+/* Workspaces */
+
+#workspaces {
+	background: @overlay;
+	margin: 0px 10px 0px 10px;
+	border-radius: 21px;
+	padding: 0px;
+	transition: all 0.1s;
+}
+
+#workspaces button {
+	padding: 0px;
+	background: @muted;
+	border-radius: 21px;
+	margin: 5px;
+	min-width: 0px;
+	font-size: 0px;
+	opacity: 0.7;
+	transition: all 0.1s;
+}
 
 #workspaces button.active {
-	color: white;
-	font-weight: bolder;
+	background: @iris;
+	opacity: 1;
 }
 
 #workspaces button.urgent {
-	animation-name: ws-blink-critical;
+	animation-name: ws-urgent-blink;
 	animation-iteration-count: infinite;
-	animation-duration: 0.3s;
+	animation-duration: 0.4s;
 	animation-direction: alternate;
-	font-weight: bolder;
 	animation-timing-function: steps(10);
+}
+
+/* Clock */
+
+#clock {
+	background: @overlay;
+	color: @iris;
+	font-size: 16px;
+    border-radius: 21px 21px 4px 4px;
+    padding: 8px 5px 5px 5px;
+    margin: 4px 4px 0px 4px;
+}
+
+/* Notifs */
+
+#custom-notification {
+	background: @overlay;
+	color: @iris;
+    border-radius: 4px 4px 21px 21px;
+    padding: 5px 6px 7px 5px;
+    margin: 0px 4px 4px 4px;
+}
+
+/* Privacy */
+
+#custom-privacy-dots {
+	font-size: 10px;
+	background: transparent;
+	margin: 6px;
+	padding: 0px 2px 0px 0px
+}
+
+/* ppd */
+
+#power-profiles-daemon {
+	background: @overlay;
+	color: @rose;
+    border-radius: 21px 21px 21px 21px;
+    padding: 3px 8px 6px 5px;
+    margin: 0px 4px 4px 4px;
 }

@@ -5,8 +5,7 @@ Personal dotfiles (configuration files) for my [Fedora Linux](https://www.fedora
 > This is **specifically** tailored to my Acer C933 Chromebook with its 1920x1080@60 display, using no display scaling.
 
 ### Highlights:
-- Design language loosely inspired by the [GNOME Human Interface Guidelines](https://developer.gnome.org/hig/)
-- Lavender / purple color theme
+- Design language loosely following the [Rosé Pine theme](https://github.com/rose-pine)
 - Vertical status bar and workspaces
 - Maximize screen real estate without sacrificing looks
 - Not too flashy, mostly out of the way
