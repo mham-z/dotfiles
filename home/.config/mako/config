@@ -18,6 +18,10 @@ font=Adwaita Sans 12
 
 progress-color=over #ffffff15
 
+on-notify=exec canberra-gtk-play -i message-new-instant
+
+group-by=app-name
+
 
 [urgency=high]
 background-color=#c9456a
