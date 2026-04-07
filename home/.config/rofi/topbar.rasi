@@ -67,7 +67,7 @@ inputbar {
     enabled:                     true;
     spacing:                     10px;
     margin:                      5px;
-    padding:                     15px;
+    padding:                     9px 15px 11 px 12px;
     border:                      0px 0px 1px 0px solid;
     border-radius:               2px;
     border-color:                @background-alt;
@@ -91,14 +91,14 @@ listview {
     lines:                       6;
     cycle:                       true;
     dynamic:                     true;
-    scrollbar:                   false;
+    scrollbar:                   true;
     layout:                      vertical;
     reverse:                     false;
     fixed-height:                true;
     fixed-columns:               true;
     
     spacing:                     5px;
-    margin:                      0px;
+    margin:                      2px;
     padding:                     0px;
     border:                      0px solid;
     border-radius:               0px;
@@ -108,21 +108,21 @@ listview {
     cursor:                      "default";
 }
 scrollbar {
-    handle-width:                5px ;
+    handle-width:                1px ;
     handle-color:                @selected;
-    border-radius:               0px;
-    background-color:            @background-alt;
+    border-radius:               6px;
+    background-color:            transparent;
 }
 
 /*****----- Elements -----*****/
 element {
     enabled:                     true;
     spacing:                     10px;
-    margin:                      0px;
+    margin:                      0px 0px 5px 5px;
     padding:                     8px;
     border:                      0px solid;
-    border-radius:               0px;
-    border-color:                @selected;
+    border-radius:               10px;
+    border-color:                transparent;
     background-color:            transparent;
     text-color:                  @foreground;
     cursor:                      pointer;
