@@ -196,7 +196,7 @@
 		"format-icons": {
 			"default": ["󰕿", "󰖀", "󰕾"]
 		},
-		"tooltip-format": "{volume}%",
+		"tooltip-format": "{desc}\n{volume}%",
 		"max-volume": 200,
 		"on-click": "swayosd-client --output-volume mute-toggle",
 		"on-click-right": "pavucontrol",
@@ -210,13 +210,10 @@
 		"format-source": "󰍬",
 		"format-source-muted": "󰍭",
 		"format": "{format_source}",
-		"tooltip-format": "{volume}%",
-		"max-volume": 200,
-		"on-click": "swayosd-client --output-volume mute-toggle",
+		"on-click": "swayosd-client --input-volume mute-toggle",
 		"on-click-right": "pavucontrol",
-		"on-click-middle": "swayosd-client --playerctl play-pause",
-		"on-scroll-down": "swayosd-client --output-volume lower --max-volume 150",
-		"on-scroll-up": "swayosd-client --output-volume raise --max-volume 150"
+		"on-scroll-down": "swayosd-client --input-volume lower --max-volume 200",
+		"on-scroll-up": "swayosd-client --input-volume raise --max-volume 200"
 	},
 
 	"bluetooth": {
