@@ -14,7 +14,7 @@ configuration {
         directories-first: true;
     }
 
-    hover-select: true;
+    //hover-select: true;
 	me-select-entry: "MousePrimary";
 	me-accept-entry: "!MousePrimary";
 }
