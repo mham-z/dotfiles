@@ -121,7 +121,7 @@
 	},        
     
 	"custom/notification": {
-		"exec": "makoctl mode | grep -qi dnd && echo 󰂚 || echo 󰂜",
+		"exec": "makoctl mode | grep -qi dnd && echo 󰂜 || echo 󰂚",
 		"interval": 10,
 		"on-click": "makoctl mode -t dnd",
 		"signal": 1,
