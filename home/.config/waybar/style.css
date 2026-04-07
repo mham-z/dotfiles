@@ -39,6 +39,7 @@
 
 /* Reset all styles */
 * {
+	all: unset;
 	font-family: Adwaita Mono Nerd Font;
 	font-size: 20px;
 }
