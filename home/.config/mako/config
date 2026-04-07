@@ -17,6 +17,8 @@ font=Adwaita Sans 12
 default-timeout=5000
 on-notify=exec canberra-gtk-play -i message-new-instant
 group-by=app-name
+icon-path=/usr/share/icons/Papirus-Dark/
+max-icon-size=32
 
 
 [urgency=high]
