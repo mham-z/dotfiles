@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-id=$(hyprctl -j activeworkspace | jq -r ".id")
-swayosd-client --custom-message="Workspace: ${id}" --custom-icon="video-display-symbolic"
