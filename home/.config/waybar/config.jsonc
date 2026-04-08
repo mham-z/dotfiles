@@ -114,8 +114,8 @@
 	"custom/backlight": {
 		"interval": "once",
 		"format": "󰖨",
-		"on-scroll-up": "brightnessctl -e2.4 -n15 set 5%+ && ~/dotfiles/home/.config/hypr/scripts/swayosd-fake-brightness",
-		"on-scroll-down": "brightnessctl -e2.4 -n15 set 5%- && ~/dotfiles/home/.config/hypr/scripts/swayosd-fake-brightness",
+		"on-scroll-up": "brightnessctl -e2.4 -n15 set 5%+ && $scripts/nsosd brightness",
+		"on-scroll-down": "brightnessctl -e2.4 -n15 set 5%- && $scripts/nsosd brightness",
 		"tooltip": true,
 		"tooltip-format": "Brightness"
 	},        
@@ -183,18 +183,17 @@
 	"pulseaudio#output": {
 		"scroll-step": 5,
 		"format": "{icon}",
-		"format-bluetooth": "{icon}",
 		"format-muted": "󰝟",
 		"format-icons": {
 			"default": ["󰕿", "󰖀", "󰕾"]
 		},
 		"tooltip-format": "{desc}\n{volume}%",
 		"max-volume": 200,
-		"on-click": "swayosd-client --output-volume mute-toggle",
+		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && ~/.config/dotfiles-scripts/nsosd sink",
 		"on-click-right": "pavucontrol",
-		"on-click-middle": "swayosd-client --playerctl play-pause",
-		"on-scroll-down": "swayosd-client --output-volume lower --max-volume 150",
-		"on-scroll-up": "swayosd-client --output-volume raise --max-volume 150"
+		"on-click-middle": "playerctl play-pause",
+		"on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && ~/.config/dotfiles-scripts/nsosd sink",
+		"on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ && ~/.config/dotfiles-scripts/nsosd sink"
 	},
 
 	"pulseaudio#input": {
@@ -202,10 +201,10 @@
 		"format-source": "󰍬",
 		"format-source-muted": "󰍭",
 		"format": "{format_source}",
-		"on-click": "swayosd-client --input-volume mute-toggle",
+		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle && ~/.config/dotfiles-scripts/nsosd source",
 		"on-click-right": "pavucontrol",
-		"on-scroll-down": "swayosd-client --input-volume lower --max-volume 200",
-		"on-scroll-up": "swayosd-client --input-volume raise --max-volume 200"
+		"on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%- && ~/.config/dotfiles-scripts/nsosd source",
+		"on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%+ && ~/.config/dotfiles-scripts/nsosd source"
 	},
 
 	"bluetooth": {
