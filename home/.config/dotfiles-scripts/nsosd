@@ -1,0 +1,110 @@
+#!/bin/bash
+
+COMMON_HINT="string:x-canonical-private-synchronous:audio-brightness"
+
+get_device_name() {
+    local type="$1"   # "sink" or "source"
+    local default_cmd="pactl get-default-${type}"
+
+    local default_name=$($default_cmd)
+    local desc=$(pactl list "${type}s" | \
+        awk -v name="$default_name" '
+            $0 ~ "Name: " name { found=1 }
+            found && $0 ~ /device\.description/ { 
+                gsub(/^[ \t]*device\.description = "/, ""); 
+                gsub(/"$/, ""); 
+                print; 
+                exit 
+            }
+        ')
+
+    if [ -n "$desc" ]; then
+        echo "$desc"
+    fi
+}
+
+notify_brightness() {
+    local level=$(brightnessctl -m info | grep -o '[0-9]\+%' | tr -d '%')
+    
+    if [ "$level" -eq 0 ]; then
+        icon="brightness"
+    elif [ "$level" -le 30 ]; then
+        icon="brightness"
+    elif [ "$level" -le 70 ]; then
+        icon="brightness"
+    else
+        icon="brightness"
+    fi
+
+    notify-send -i "$icon" -h int:value:"$level" -h "$COMMON_HINT" \
+        "Brightness" "${level}%"
+}
+
+notify_sink() {
+    local name=$(get_device_name sink)
+    local volume=$(pactl get-sink-volume @DEFAULT_SINK@ | grep -o '[0-9]\+%' | head -1 | tr -d '%')
+    local muted=$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{print $2}')
+
+    if [ "$muted" = "yes" ]; then
+        icon="audio-volume-muted"
+        status="Muted"
+    else
+        if [ "$volume" -eq 0 ]; then
+            icon="audio-volume-off"
+        elif [ "$volume" -le 33 ]; then
+            icon="audio-volume-low"
+        elif [ "$volume" -le 66 ]; then
+            icon="audio-volume-medium"
+        elif [ "$volume" -le 100 ]; then
+            icon="audio-volume-high"
+        else
+            icon="audio-volume-high-warning"
+        fi
+        status="${volume}%"
+    fi
+
+    notify-send -i "$icon" -h int:value:"$volume" -h "$COMMON_HINT" \
+        "Volume • ${name}" "${status}"
+}
+
+notify_source() {
+    local name=$(get_device_name source)
+    local volume=$(pactl get-source-volume @DEFAULT_SOURCE@ | grep -o '[0-9]\+%' | head -1 | tr -d '%')
+    local muted=$(pactl get-source-mute @DEFAULT_SOURCE@ | awk '{print $2}')
+
+    if [ "$muted" = "yes" ]; then
+        icon="microphone-sensitivity-muted"
+        status="Muted"
+    else
+        if [ "$volume" -eq 0 ]; then
+            icon="microphone-sensitivity-muted"
+        elif [ "$volume" -le 33 ]; then
+            icon="microphone-sensitivity-low"
+        elif [ "$volume" -le 66 ]; then
+            icon="microphone-sensitivity-medium"
+        else
+            icon="microphone-sensitivity-high"
+        fi
+        status="${volume}%"
+    fi
+
+    notify-send -i "$icon" -h int:value:"$volume" -h "$COMMON_HINT" \
+        "Microphone • ${name}" "${status}"
+}
+
+case "$1" in
+    brightness)
+        notify_brightness
+        ;;
+    sink)
+        notify_sink
+        ;;
+    source)
+        notify_source
+        ;;
+    *)
+        echo "Use notify-send to show your brightness level or sink/source volume."
+        echo "Usage: nsosd {brightness|sink|source}"
+        exit 1
+        ;;
+esac
