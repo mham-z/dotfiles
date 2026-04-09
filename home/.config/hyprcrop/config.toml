@@ -32,19 +32,19 @@ hover_text = "#FFFFFFFF"
 
 [freeze_colors.window_frame]
 fill_idle = "#00000000"
-fill_hovered = "#31748f66"
+fill_hovered = "#c4a7e766"
 stroke_idle = "#00000000"
 stroke_hovered = "#00000000"
 label_text = "#e0def4"
-hint_text = "#908caa"
+hint_text = "#e0def4"
 
 [freeze_colors.monitor_frame]
 fill_idle = "#00000000"
-fill_hovered = "#31748f66"
+fill_hovered = "#9ccfd866"
 stroke_idle = "#00000000"
 stroke_hovered = "#00000000"
 label_text = "#e0def4"
-hint_text = "#908caa"
+hint_text = "#e0def4"
 name_text_idle = "#6e6a86"
 
 [freeze_colors.crop_frame]
