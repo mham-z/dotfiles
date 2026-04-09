@@ -1,52 +1,52 @@
 save_path = "~/Pictures/Screenshots"
-filename_pattern = "hyprsnap_%Y%m%d_%H%M%S"
-toolbar_position = "top"
-capture_window_border = false
+filename_pattern = "screenshot-%Y-%m-%d-at-%H-%M-%S"
+toolbar_position = "right"
+capture_window_border = true
 
 [freeze_glyphs]
-crop = "󰆟"
-window = ""
+crop = "󰆞"
+window = "󰖯"
 monitor = "󰍹"
-all = "󰁌"
-cancel = "󰖭"
+all = "󱢍"
+cancel = "󰅖"
 
 [freeze_colors.overlay]
 background = "#00000059"
 
 [freeze_colors.toolbar]
-background = "#141414D9"
+background = "#00000000"
 
 [freeze_colors.button]
-idle_background = "#797B7EFF"
+idle_background = "#1f1d2e"
 idle_text = "#E6E6E6FF"
-active_background = "#5865F2FF"
+active_background = "#31748f"
 active_text = "#FFFFFFFF"
-hover_background = "#6B79F5FF"
+hover_background = "#403d52"
 hover_text = "#FFFFFFFF"
 
 [freeze_colors.cancel_button]
-idle_background = "#C3423FFF"
+idle_background = "#1f1d2e"
 idle_text = "#FFFFFFFF"
-hover_background = "#D44A47FF"
+hover_background = "#eb6f92"
 hover_text = "#FFFFFFFF"
 
 [freeze_colors.window_frame]
-fill_idle = "#4585FF33"
-fill_hovered = "#4585FF8C"
-stroke_idle = "#4D99FFB3"
-stroke_hovered = "#4D99FFFF"
-label_text = "#FFFFFFFF"
-hint_text = "#CCE6FFE6"
+fill_idle = "#00000000"
+fill_hovered = "#31748f66"
+stroke_idle = "#00000000"
+stroke_hovered = "#00000000"
+label_text = "#e0def4"
+hint_text = "#908caa"
 
 [freeze_colors.monitor_frame]
-fill_idle = "#4585FF14"
-fill_hovered = "#4585FF66"
-stroke_idle = "#4D99FF59"
-stroke_hovered = "#4D99FFFF"
-label_text = "#FFFFFFFF"
-hint_text = "#CCE6FFE6"
-name_text_idle = "#FFFFFF80"
+fill_idle = "#00000000"
+fill_hovered = "#31748f66"
+stroke_idle = "#00000000"
+stroke_hovered = "#00000000"
+label_text = "#e0def4"
+hint_text = "#908caa"
+name_text_idle = "#6e6a86"
 
 [freeze_colors.crop_frame]
-stroke = "#FFFFFFFF"
-label_text = "#FFFFFFFF"
+stroke = "#c4a7e7"
+label_text = "#e0def4"
