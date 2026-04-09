@@ -1,0 +1,52 @@
+save_path = "~/Pictures/Screenshots"
+filename_pattern = "hyprsnap_%Y%m%d_%H%M%S"
+toolbar_position = "top"
+capture_window_border = false
+
+[freeze_glyphs]
+crop = "󰆟"
+window = ""
+monitor = "󰍹"
+all = "󰁌"
+cancel = "󰖭"
+
+[freeze_colors.overlay]
+background = "#00000059"
+
+[freeze_colors.toolbar]
+background = "#141414D9"
+
+[freeze_colors.button]
+idle_background = "#797B7EFF"
+idle_text = "#E6E6E6FF"
+active_background = "#5865F2FF"
+active_text = "#FFFFFFFF"
+hover_background = "#6B79F5FF"
+hover_text = "#FFFFFFFF"
+
+[freeze_colors.cancel_button]
+idle_background = "#C3423FFF"
+idle_text = "#FFFFFFFF"
+hover_background = "#D44A47FF"
+hover_text = "#FFFFFFFF"
+
+[freeze_colors.window_frame]
+fill_idle = "#4585FF33"
+fill_hovered = "#4585FF8C"
+stroke_idle = "#4D99FFB3"
+stroke_hovered = "#4D99FFFF"
+label_text = "#FFFFFFFF"
+hint_text = "#CCE6FFE6"
+
+[freeze_colors.monitor_frame]
+fill_idle = "#4585FF14"
+fill_hovered = "#4585FF66"
+stroke_idle = "#4D99FF59"
+stroke_hovered = "#4D99FFFF"
+label_text = "#FFFFFFFF"
+hint_text = "#CCE6FFE6"
+name_text_idle = "#FFFFFF80"
+
+[freeze_colors.crop_frame]
+stroke = "#FFFFFFFF"
+label_text = "#FFFFFFFF"
