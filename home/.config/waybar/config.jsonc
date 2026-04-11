@@ -97,7 +97,7 @@
         },
       
 	"battery": {
-		"interval": 5,
+		"interval": 30,
 		"states": {
 			"warning": 30,
 			"critical": 15
