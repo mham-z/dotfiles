@@ -124,7 +124,7 @@
 		"exec": "makoctl mode | grep -qi dnd && echo 󰂜 || echo 󰂚",
 		"interval": 10,
 		"on-click": "makoctl mode -t dnd",
-		"signal": 1,
+		"on-click-right": "makoctl dismiss -a",
 		"format": "{}",
 		"tooltip": false
 	},
