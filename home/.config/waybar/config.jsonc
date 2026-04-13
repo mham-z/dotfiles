@@ -130,7 +130,7 @@
 	},
 
 	"custom/privacy-dots": {
-		"exec": "~/dotfiles/home/.config/waybar/privacy-dots",
+		"exec": "~/.config/dotfiles-scripts/privacy-dots",
 		"return-type": "json",
 		"interval": 5,
 		"format": "{text}",
