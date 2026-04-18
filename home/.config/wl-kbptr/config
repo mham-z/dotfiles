@@ -1,6 +1,6 @@
 [general]
 home_row_keys=qwerasdfzxc
-modes=floating
+modes=floating,click
 cancellation_status_code=0
 
 [mode_floating]
