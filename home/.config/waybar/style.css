@@ -1,12 +1,12 @@
 @import "./colors.css";
 
 @keyframes blink-critical {
-	50% {
-		color: orange;
+	30% {
+		color: @love;
 	}
 
 	to {
-		color: orange;
+		color: @gold;
 	}
 }
 
@@ -91,21 +91,13 @@ tooltip label {
 	color: @gold;
 }
 
-#battery.warning.charging {
-	color: @iris;
-}
-
 #battery.critical {
 	color: @love;
 }
 
-#battery.critical.charging {
-	color: @iris;
-}
-
 #battery.critical.discharging {
 	animation-name: blink-critical;
-	animation-duration: .2s;
+	animation-duration: 0.2s;
 	animation-direction: alternate;
 	animation-timing-function: steps(10);
 }
