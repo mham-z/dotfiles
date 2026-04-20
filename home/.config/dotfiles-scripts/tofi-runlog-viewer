@@ -1,6 +1,6 @@
 #!/bin/bash
-LOG_DIR="$HOME/.cache/tofi-run-logs"
-LATEST=$(ls -t "$LOG_DIR"/tofi-run-*.log 2>/dev/null | head -n1)
+LOG_DIR="$HOME/.cache/tofi-runlog"
+LATEST=$(ls -t "$LOG_DIR"/tofi-runlog-*.log 2>/dev/null | head -n1)
 if [ -n "$LATEST" ]; then
     kitty sh -c "less +F \"$LATEST\""
 else
