@@ -2,15 +2,15 @@ background-color=#1f1d2e
 text-color=#e0def4
 border-color=#26233a
 border-size=1
-border-radius=10
+border-radius=21
 progress-color=over #ffffff15
 
-anchor=center-left
+anchor=top-right
 width=400
 height=110
-outer-margin=5
+outer-margin=10
 margin=5
-padding=7,10,7,10
+padding=14,0,14,0
 
 font=Adwaita Sans 12
 
