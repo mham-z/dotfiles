@@ -6,7 +6,7 @@ Personal dotfiles (configuration files) for my [Fedora Linux](https://www.fedora
 
 ### Highlights:
 - Design language loosely following the [Rosé Pine theme](https://github.com/rose-pine)
-- Vertical status bar and workspaces
+- Horizontal status bar and workspaces
 - Maximize screen real estate without sacrificing looks
 - Not too flashy, mostly out of the way
 

@@ -22,7 +22,7 @@
 
 @keyframes ws-urgent-blink {
 	20% {
-		background: @muted;
+		background: @overlay;
 		opacity: inherit;
 	}
 
@@ -46,7 +46,7 @@
 
 /* The whole bar */
 #waybar {
-	border-radius: 0px 21px 21px 0px;
+	border-radius: 0px 0px 21px 21px;
 	background: alpha(@surface, 1);
 	color: white;
 }
@@ -75,10 +75,10 @@ tooltip label {
 #battery {
     background: @overlay;
 	color: @iris;
-    border-radius: 4px 4px 18px 18px;
+    border-radius: 4px 18px 18px 4px;
 	border: 1px solid alpha(@iris, 0.1);
-    padding: 5px 5px 6px 5px;
-    margin: 0px 4px 4px 4px;
+    padding: 0px 11px 0px 9px;
+    margin: 4px 4px 4px 0px;
 }
 
 #battery {
@@ -109,8 +109,8 @@ tooltip label {
 	color: @iris;
     border-radius: 4px 4px 4px 4px;
 	border: 1px solid alpha(@iris, 0.1);
-    padding: 5px 10px 4px 5px; /* TOP RIGHT BOTTOM LEFT */
-    margin: 0px 4px 0px 4px;
+    padding: 0px 14px 0px 6px; /* TOP RIGHT BOTTOM LEFT */
+    margin: 4px 0px 4px 0px;
 }
 
 #network.disconnected {
@@ -126,10 +126,10 @@ tooltip label {
 #bluetooth {
     background: @overlay;
 	color: @iris;
-    border-radius: 21px 21px 4px 4px;
+    border-radius: 18px 4px 4px 18px;
 	border: 1px solid alpha(@iris, 0.1);
-    padding: 7px 5px 5px 5px; /* TOP RIGHT BOTTOM LEFT */
-    margin: 0px 4px 0px 4px;
+    padding: 0px 9px 0px 11px; /* TOP RIGHT BOTTOM LEFT */
+    margin: 4px 0px 4px 4px;
 }
 
 #bluetooth.disabled {
@@ -146,7 +146,7 @@ tooltip label {
 
 #bluetooth.connected {
 	color: @iris;
-	padding: 7px 7px 5px 5px; /* Weird shifting to the right fix */
+	padding: 0px 10px 0px 10px; /* Weird shifting to the right fix */
 }
 
 /* PulseAudio */
@@ -154,10 +154,10 @@ tooltip label {
 #pulseaudio.output {
     background: @overlay;
 	color: @rose;
-    border-radius: 4px 4px 21px 21px;
+    border-radius: 4px 21px 21px 4px;
 	border: 1px solid alpha(@iris, 0.1);
-    padding: 5px 6px 6px 5px;
-    margin: 0px 4px 4px 4px;
+    padding: 0px 12px 0px 8px;
+    margin: 4px 0px 4px 0px;
 }
 
 #pulseaudio.input {
@@ -165,8 +165,8 @@ tooltip label {
 	color: @rose;
     border-radius: 4px 4px 4px 4px;
 	border: 1px solid alpha(@iris, 0.1);
-    padding: 5px 5px 4px 5px;
-    margin: 0px 4px 0px 4px;
+    padding: 0px 11px 0px 9px;
+    margin: 4px 0px 4px 0px;
 }
 
 /* custom/backlight */
@@ -176,8 +176,8 @@ tooltip label {
 	color: @rose;
     border-radius: 4px 4px 4px 4px;
 	border: 1px solid alpha(@iris, 0.1);
-    padding: 5px 10px 5px 5px;
-    margin: 0px 4px 0px 4px;
+    padding: 0px 13px 0px 7px;
+    margin: 4px 0px 4px 0px;
 }
 
 /* Idle Inhibitor */
@@ -185,16 +185,16 @@ tooltip label {
 #idle_inhibitor {
     background: @overlay;
 	color: @rose;
-    border-radius: 21px 21px 4px 4px;
+    border-radius: 21px 4px 4px 21px;
 	border: 1px solid alpha(@iris, 0.1);
-    padding: 9px 8px 5px 5px; /* TOP RIGHT BOTTOM LEFT */
-    margin: 0px 4px 0px 4px;
+    padding: 0px 11px 0px 9px;
+    margin: 4px 0px 4px 0px;
 }
 
 /* Tray */
 
 #tray {
-	margin-top: 8px;
+	margin-left: 6px;
 }
 
 #tray menu {
@@ -225,33 +225,44 @@ tooltip label {
 }
 
 /* Workspaces */
-
-#workspaces {
-	background: @overlay;
-	margin: 0px 10px 0px 10px;
-	border-radius: 21px;
+#workspaces button {
+    font-weight: bold;
+    background-color: @overlay;
 	border: 1px solid alpha(@iris, 0.1);
-	padding: 0px;
-	transition: all 0.1s;
+    box-shadow: none;
+    text-shadow: none;
+    padding: 0px 8px 0px 0px;
+    border-radius: 18px;
+	margin: 4px 4px 4px 4px;
+	transition: 0.1s all linear;
 }
 
-#workspaces button {
-	padding: 0px;
-	background: @highlightMed;
-	border-radius: 21px;
-	border: 1px solid alpha(@iris, 0.1);
-	margin: 5px;
-	min-width: 0px;
-	min-height: 0px;
-	font-size: 0px;
-	opacity: 0.7;
-	transition: all 0.15s;
+#workspaces .workspace-label {
+    padding: 2px 9px 0px 9px;
+	margin: 2px;
+	border-radius: 16px;
+	background: alpha(@iris, 0.1);
+	color: @text;
+	font-size: 16px;
+}
+
+#workspaces .taskbar-window {
+    font-weight: normal;
+	padding: 0px 0px;
+	margin: 0px;
+}
+
+#workspaces .taskbar-window image {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+#workspaces button.empty {
+	padding: 0px 0px 0px 0px;
 }
 
 #workspaces button.active {
-	background: @iris;
-	min-height: 50px;
-	opacity: 1;
+	border: 2px solid alpha(@iris, 0.9);
 }
 
 #workspaces button.urgent {
@@ -262,6 +273,7 @@ tooltip label {
 	animation-timing-function: steps(10);
 }
 
+
 /* Clock */
 
 #clock {
@@ -269,10 +281,10 @@ tooltip label {
 	color: @iris;
 	font-size: 16px;
 	font-weight: bold;
-    border-radius: 18px 18px 4px 4px;
+    border-radius: 18px 4px 4px 18px;
 	border: 1px solid alpha(@iris, 0.1);
-    padding: 10px 5px 5px 7px;
-    margin: 4px 4px 0px 4px;
+    padding: 4px 8px 0px 9px;
+    margin: 4px 0px 4px 4px;
 }
 
 /* Notifs */
@@ -280,10 +292,10 @@ tooltip label {
 #custom-notification {
 	background: @overlay;
 	color: @iris;
-    border-radius: 4px 4px 21px 21px;
+    border-radius: 4px 21px 21px 4px;
 	border: 1px solid alpha(@iris, 0.1);
-    padding: 5px 6px 7px 5px;
-    margin: 0px 4px 4px 4px;
+    padding: 0px 13px 0px 8px;
+    margin: 4px 0px 4px 0px;
 }
 
 /* Privacy */
@@ -291,8 +303,8 @@ tooltip label {
 #custom-privacy-dots {
 	font-size: 10px;
 	background: transparent;
-	margin: 6px;
-	padding: 0px 2px 0px 0px
+	margin: 0px 6px 0px 12px;
+	padding: 0px 0px 0px 0px
 }
 
 /* ppd */
@@ -302,6 +314,6 @@ tooltip label {
 	color: @rose;
     border-radius: 21px 21px 21px 21px;
 	border: 1px solid alpha(@iris, 0.1);
-    padding: 3px 8px 4px 5px;
-    margin: 0px 4px 4px 4px;
+    padding: 0px 12px 0px 8px;
+    margin: 4px 0px 4px 4px;
 }

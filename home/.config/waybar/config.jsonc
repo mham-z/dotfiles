@@ -11,13 +11,14 @@
 	// Global configuration
 	// -------------------------------------------------------------------------
 
-	"layer": "top",
+	"layer": "overlay",
+	"exclusive": true,
 
-	"position": "left",
+	"position": "top",
 	"mode": "dock",
 	"start_hidden": false,
 	
-	"width": 42,
+	"height": 42,
 
 	"spacing": 2,
 	"margin-left": 0,
@@ -149,7 +150,7 @@
 
 	"clock#time": {
 		"interval": 1,
-		"format": "{:%I\n%M}",
+		"format": "{:%I:%M}",
 		"tooltip": true,
 		"tooltip-format": "{:%r\n%A, %d %B %Y}"
 	},
@@ -171,13 +172,26 @@
 		"all-outputs": false,
 		"disable-scroll": false,
 		"persistent-workspaces": false,
-		"format": "",
+		"format": "{name}{windows}",
 		"format-icons": {
 			"active": "",//
 			"default": ""//
 		},
 		"on-scroll-down": "hyprctl dispatch workspace e+1",
-		"on-scroll-up": "hyprctl dispatch workspace e-1"
+		"on-scroll-up": "hyprctl dispatch workspace e-1",
+		"workspace-taskbar": {
+			// Enable the workspace taskbar. Default: false
+			"enable": true,
+			"spacing": 0,
+			// If true, the active/focused window will have an 'active' class. Could cause higher CPU usage due to more frequent redraws. Default: false
+			"update-active-window": false,
+
+			// Format of the windows in the taskbar. Default: "{icon}". Allowed variables: {icon}, {title}
+			"format": "{icon}",
+
+			// Icon size in pixels. Default: 16
+			"icon-size": 16
+		}
 	},
 
 	"pulseaudio#output": {

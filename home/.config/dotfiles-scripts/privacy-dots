@@ -149,7 +149,7 @@ purple="#c4a7e7"
 dot() {
   local on="$1" color="$2"
   if [[ "$on" -eq 1 ]]; then
-    printf '<span foreground="%s"></span>' "$color"
+    printf '<span foreground="%s"> </span>' "$color"
   else
     printf ''
   fi
