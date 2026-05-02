@@ -307,6 +307,27 @@ tooltip label {
 	padding: 0px 0px 0px 0px
 }
 
+/* temps */
+
+#temperature {
+	background: @overlay;
+	color: @foam;
+    border-radius: 21px 21px 21px 21px;
+	border: 1px solid alpha(@iris, 0.1);
+    padding: 0px 10px 0px 10px;
+    margin: 4px 0px 4px 4px;
+	transition: 0.1s all linear;
+}
+
+#temperature.warning {
+	color: @gold;
+}
+
+#temperature.critical {
+	color: @love;
+}
+
+
 /* ppd */
 
 #power-profiles-daemon {

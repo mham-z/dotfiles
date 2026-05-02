@@ -30,6 +30,7 @@
 		"clock#time",
 		"custom/notification",
 		"power-profiles-daemon",
+		"temperature",
 		"custom/privacy-dots",
 		"tray"
 	],
@@ -51,6 +52,15 @@
 	// -------------------------------------------------------------------------
 	// Modules
 	// -------------------------------------------------------------------------
+
+	 "temperature": {
+		"interval": 5,
+		"thermal-zone": 4,
+		"critical-threshold": 80,
+		"warning-threshold": 70,
+		"format-critical": "󰸁<span size=\"12pt\"> {temperatureC}°C</span>",
+		"format": "󰔏<span size=\"12pt\"> {temperatureC}°C</span>"
+	},
 
 	"power-profiles-daemon": {
 		"format": "{icon}",
@@ -149,7 +159,7 @@
 	},
 
 	"clock#time": {
-		"interval": 1,
+		"interval": 5,
 		"format": "{:%I:%M}",
 		"tooltip": true,
 		"tooltip-format": "{:%r\n%A, %d %B %Y}"
