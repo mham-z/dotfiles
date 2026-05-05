@@ -238,7 +238,7 @@ tooltip label {
 }
 
 #workspaces .workspace-label {
-    padding: 2px 9px 0px 9px;
+    padding: 2px 8px 0px 8px;
 	margin: 2px;
 	border-radius: 16px;
 	background: alpha(@iris, 0.1);
