@@ -59,8 +59,3 @@ function fish_prompt
 	echo -n '➤ '
 	set_color normal
 end
-
-# hacky blank line thing
-function _blank_line --on-event fish_postexec
-	string match -qr '^\s*(clear|tput\s+reset|reset)\s*$' -- $argv[1]; or echo
-end
