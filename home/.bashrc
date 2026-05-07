@@ -5,32 +5,36 @@
 
 # You may copy this to /root/ if you want.
 
-_prompt_timer_start() {
-	[[ -z $_prompt_timer_started ]] && _prompt_timer_ms=$(( ${EPOCHREALTIME/.} / 1000 ))
-	_prompt_timer_started=1
-}
+if (( EUID != 0 )); then
+	_prompt_timer_start() {
+		[[ -z $_prompt_timer_started ]] && _prompt_timer_ms=$(( ${EPOCHREALTIME/.} / 1000 ))
+		_prompt_timer_started=1
+	}
 
-_prompt_timer_stop() {
-	local now_ms=$(( ${EPOCHREALTIME/.} / 1000 ))
-	_prompt_duration=$(( now_ms - ${_prompt_timer_ms:-$now_ms} ))
-	unset _prompt_timer_started _prompt_timer_ms
-}
+	_prompt_timer_stop() {
+		local now_ms=$(( ${EPOCHREALTIME/.} / 1000 ))
+		_prompt_duration=$(( now_ms - ${_prompt_timer_ms:-$now_ms} ))
+		unset _prompt_timer_started _prompt_timer_ms
+	}
 
-trap '_prompt_timer_start' DEBUG
+	trap '_prompt_timer_start' DEBUG
+fi
 
 _build_prompt() {
 	local last_status=$?
 
-	_prompt_timer_stop
-
 	# time duration thing
-	local dur=$_prompt_duration dur_str=""
-	if   (( dur >= 60000 )); then
-		dur_str="$(( dur / 60000 ))m$(( dur % 60000 / 1000 ))s"
-	elif (( dur >= 1000 )); then
-		dur_str="$(( dur / 1000 )).$(( dur % 1000 / 100 ))s"
-	elif (( dur > 0 )); then
-		dur_str="${dur}ms"
+	local dur_str=""
+	if (( EUID != 0 )); then
+		_prompt_timer_stop
+		local dur=$_prompt_duration
+		if   (( dur >= 60000 )); then
+			dur_str="$(( dur / 60000 ))m$(( dur % 60000 / 1000 ))s"
+		elif (( dur >= 1000 )); then
+			dur_str="$(( dur / 1000 )).$(( dur % 1000 / 100 ))s"
+		elif (( dur > 0 )); then
+			dur_str="${dur}ms"
+		fi
 	fi
 
 	# pwd
