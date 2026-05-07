@@ -16,7 +16,7 @@ Personal dotfiles (configuration files) for my [Fedora Linux](https://www.fedora
 ## Setup
 1. Install [GNU Stow](https://www.gnu.org/software/stow/)
 2. Clone the repository into your home folder\
-`git clone --depth=1 https://github.com/mham-z/dotfiles.git ~/dotfiles/`
+`git clone https://github.com/mham-z/dotfiles.git ~/dotfiles/`
 3. Change directories and stow\
 `cd ~/dotfiles/ && ./stow.sh`\
 This symlinks everything in the dotfiles repository, so make sure you delete any pre-existing files and folders in `~/.config`.
