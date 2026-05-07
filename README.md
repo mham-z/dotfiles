@@ -10,9 +10,6 @@ Personal dotfiles (configuration files) for my [Fedora Linux](https://www.fedora
 - Maximize screen real estate without sacrificing looks
 - Not too flashy, mostly out of the way
 
-### Credits:
-- [Aditya Shakya](https://github.com/adi1090x) for the [Rofi configuration](https://github.com/adi1090x/rofi)
-
 ## Setup
 1. Install [GNU Stow](https://www.gnu.org/software/stow/)
 2. Clone the repository into your home folder\
