@@ -1,5 +1,5 @@
 # This is an AWFUL fish prompt.
-# Please don't use this for actual work...
+# Please don't use this for actual work, and certainly not as a good reference...
 # You have been warned.
 
 function fish_prompt
