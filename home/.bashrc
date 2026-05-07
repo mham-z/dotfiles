@@ -3,6 +3,8 @@
 # Please don't use this for actual work, and certainly not as a good reference...
 # You have been warned.
 
+# You may copy this to /root/ if you want.
+
 _prompt_timer_start() {
 	[[ -z $_prompt_timer_started ]] && _prompt_timer_ms=$(( ${EPOCHREALTIME/.} / 1000 ))
 	_prompt_timer_started=1
