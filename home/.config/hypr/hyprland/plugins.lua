@@ -1,0 +1,1 @@
+hl.exec_cmd("hyprpm reload")
