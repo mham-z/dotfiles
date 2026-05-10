@@ -187,8 +187,6 @@
 			"active": "",//
 			"default": ""//
 		},
-		"on-scroll-down": "hyprctl dispatch workspace e+1",
-		"on-scroll-up": "hyprctl dispatch workspace e-1",
 		"workspace-taskbar": {
 			// Enable the workspace taskbar. Default: false
 			"enable": true,
