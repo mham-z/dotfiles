@@ -14,7 +14,6 @@ local startup_uwsm = {
 	"cursor-clip --daemon";
 	"udiskie -s";
 	"wlsunset -l 25 -L 67";
-	"notify-send works works";
 }
 
 local shutdown = {
