@@ -63,6 +63,7 @@ end
 hl.bind("SUPER + mouse:272", hl.dsp.window.tag({tag = "+dragged"}), {mouse = true})
 hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), {mouse = true})
 hl.bind("SUPER + mouse:272", hl.dsp.window.tag({tag = "-dragged"}), {mouse = true, release = true})
+hl.bind("mouse:272", hl.dsp.window.tag({tag = "-dragged"}), {mouse = true, release = true, non_consuming = true})
 hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), {mouse = true})
 
 -- window controls
