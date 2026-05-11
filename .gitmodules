@@ -1,0 +1,3 @@
+[submodule "home/.config/aster"]
+	path = home/.config/aster
+	url = https://github.com/mham-z/aster
