@@ -3,7 +3,7 @@ hl.config({
 		kb_layout = "us";
 
 		follow_mouse = 1;
-		accel_profile = "adaptive";
+		accel_profile = "flat";
 		sensitivity = 0;
 
 		touchpad = {
