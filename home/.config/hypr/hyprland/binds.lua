@@ -12,11 +12,12 @@ local lowres = false
 hl.bind("SUPER + M", function()
 	lowres = not lowres
 
+	hl.config({input = {sensitivity = lowres and -0.2 or 0}})
 	hl.monitor({
 		output = "eDP-1";
-		mode = (lowres and "1280x720" or "preferred");
+		mode = (lowres and "960x540" or "preferred");
 		position = "auto";
-		scale = "1";
+		scale = (lowres and "0.8" or "1");
 	})
 end)
 hl.bind("SUPER + G", hl.dsp.group.toggle())
