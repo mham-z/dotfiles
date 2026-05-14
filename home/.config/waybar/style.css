@@ -228,7 +228,7 @@ tooltip label {
 #workspaces button {
     font-weight: bold;
     background-color: @surface;
-	border: 1px solid alpha(@iris, 0.1);
+	border: 2px solid alpha(@iris, 0.1);
     box-shadow: none;
     text-shadow: none;
     padding: 0px 8px 0px 0px;
