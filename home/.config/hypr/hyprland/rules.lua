@@ -82,5 +82,5 @@ hl.layer_rule({
 hl.layer_rule({
     name = "notif-slide",
     match = {namespace = "notifications"},
-    animation = "slide right",
+    animation = "slide top",
 })

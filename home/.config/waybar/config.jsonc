@@ -11,11 +11,11 @@
 	// Global configuration
 	// -------------------------------------------------------------------------
 
-	"layer": "overlay",
-	"exclusive": true,
+	"layer": "top",
+	"exclusive": false,
 
 	"position": "top",
-	"mode": "dock",
+	//"mode": "dock",
 	"start_hidden": false,
 	
 	"height": 42,
