@@ -76,7 +76,7 @@ hl.layer_rule({
 hl.layer_rule({
     name = "tofi-slide",
     match = {namespace = "launcher"},
-    animation = "slide left",
+    animation = "slide",
 })
 
 hl.layer_rule({

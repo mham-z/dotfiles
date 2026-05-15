@@ -12,7 +12,7 @@
 	# If a path is given, tofi will startup much quicker, but any
 	# characters not in the chosen font will fail to render.
 	#
-	# Otherwise, fonts are interpreted in Pango format.
+	# Ot3herwise, fonts are interpreted in Pango format.
 	font = "/usr/share/fonts/adwaita-sans-fonts/AdwaitaSans-Regular.ttf"
 
 	# Point size of text.
@@ -166,9 +166,9 @@
 ### Window theming
 #
 	# Width and height of the window. Can be pixels or a percentage.
-	width = 1200
+	width = 50%
 	height = 42
-
+	
 	# Window background color
 	background-color = #1f1d2e
 
@@ -179,7 +179,7 @@
 	outline-color = #080800
 
 	# Width of the border in pixels.
-	border-width = 2
+	border-width = 3
 
 	# Border color
 	border-color = #eb6f92ff
@@ -188,8 +188,8 @@
 	corner-radius = 21
 
 	# Padding between borders and text. Can be pixels or a percentage.
-	padding-top = 2
-	padding-bottom = 3
+	padding-top = 1
+	padding-bottom = 1
 	padding-left = 6
 	padding-right = 0
 
@@ -212,7 +212,7 @@
 	#
 	# Supported values: top-left, top, top-right, right, bottom-right,
 	# bottom, bottom-left, left, center.
-	anchor = bottom-left
+	anchor = top
 
 	# Set the size of the exclusive zone.
 	#
@@ -226,7 +226,7 @@
 
 	# Window offset from edge of screen. Only has an effect when anchored
 	# to the relevant edge. Can be pixels or a percentage.
-	margin-top = 0
+	margin-top = 8
 	margin-bottom = 10
 	margin-left = 10
 	margin-right = 10
