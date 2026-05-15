@@ -10,7 +10,7 @@ width=700
 height=42
 outer-margin=0
 margin=0
-padding=10,0,10,0
+padding=9,0,10,0
 
 layer=overlay
 
@@ -21,7 +21,7 @@ font=Adwaita Sans 12
 default-timeout=5000
 group-by=app-name
 icon-path=/usr/share/icons/Papirus-Dark/
-max-icon-size=32
+max-icon-size=24
 max-visible=1
 
 [urgency=high]
