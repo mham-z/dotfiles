@@ -1,8 +1,8 @@
 --[[
-    it's recommended to put as much stuff as possible in
-    $XDG_CONFIG_HOME/autostart or enable them with systemctl
-    so uwsm can handle them properly. regardless, some things
-    can't be started that way so we put them here.
+	it's recommended to put as much stuff as possible in
+	$XDG_CONFIG_HOME/autostart or enable them with systemctl
+	so uwsm can handle them properly. regardless, some things
+	can't be started that way so we put them here.
 ]]--
 
 local startup = {
