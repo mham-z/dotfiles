@@ -6,7 +6,7 @@ hl.config({
 			enabled = true;
 			range = 14;
 			render_power = 3;
-			color = _G.colors.base;
+			color = Colors.base;
 		};
 
 		blur = {enabled = false};

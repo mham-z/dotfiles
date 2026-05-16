@@ -4,7 +4,7 @@ hl.env("HYPRCURSOR_THEME", "macOS-hypr")
 hl.env("HYPRCURSOR_SIZE", "26")
 
 -- adapted from upstream: https://github.com/jishnurajendran/hyprland-rosepine/blob/main/rose-pine.conf
-_G.colors = {
+Colors = {
 	base           = 0xff191724;
 	surface        = 0xff1f1d2e;
 	overlay        = 0xff26233a;

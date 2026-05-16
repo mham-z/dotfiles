@@ -9,8 +9,8 @@ hl.config({
 		resize_on_border = true;
 		extend_border_grab_area = 3;
 		col = {
-			active_border = _G.colors.iris;
-			inactive_border = _G.colors.surface;
+			active_border = Colors.iris;
+			inactive_border = Colors.surface;
 		};
 
 		layout = "dwindle";
@@ -32,10 +32,10 @@ hl.config({
 	group = {
 		drag_into_group = 1;
 		col = {
-			border_active = _G.colors.foam;
-			border_inactive = _G.colors.muted;
-			border_locked_active = _G.colors.pine;
-			border_locked_inactive = _G.colors.overlay;
+			border_active = Colors.foam;
+			border_inactive = Colors.muted;
+			border_locked_active = Colors.pine;
+			border_locked_inactive = Colors.overlay;
 		};
 
 		groupbar = {
@@ -59,17 +59,17 @@ hl.config({
 
 			-- Colors
 			col = {
-				active = _G.colors.foam;
-				inactive = _G.colors.highlightMed;
-				locked_active = _G.colors.pine;
-				locked_inactive = _G.colors.overlay;
+				active = Colors.foam;
+				inactive = Colors.highlightMed;
+				locked_active = Colors.pine;
+				locked_inactive = Colors.overlay;
 			};
 
 			-- Text colors
-			text_color = _G.colors.overlay;
-			text_color_inactive = _G.colors.text;
-			text_color_locked_active = _G.colors.text;
-			text_color_locked_inactive = _G.colors.text;
+			text_color = Colors.overlay;
+			text_color_inactive = Colors.text;
+			text_color_locked_active = Colors.text;
+			text_color_locked_inactive = Colors.text;
 
 			gaps_in = 6;
 			gaps_out = 6;

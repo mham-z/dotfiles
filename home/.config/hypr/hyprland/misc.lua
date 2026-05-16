@@ -7,7 +7,7 @@ hl.config({
 
 		middle_click_paste = false;
 
-		background_color = _G.colors.base;
+		background_color = Colors.base;
 		font_family = "Adwaita Sans";
 	};
 
