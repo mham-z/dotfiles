@@ -55,7 +55,7 @@
 
 	 "temperature": {
 		"interval": 5,
-		"thermal-zone": 5,
+		"hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon5/temp1_input",
 		"critical-threshold": 80,
 		"warning-threshold": 70,
 		"format-critical": "󰸁<span size=\"12pt\"> {temperatureC}°C</span>",
