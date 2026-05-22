@@ -1,4 +1,4 @@
-# dotfiles
+# hyprland-dotfiles
 
 Personal dotfiles for my [Fedora Linux](https://www.fedoraproject.org/) setup using the [Hyprland](https://github.com/hyprwm/hyprland) compositor.
 > [!NOTE]
@@ -13,9 +13,8 @@ Personal dotfiles for my [Fedora Linux](https://www.fedoraproject.org/) setup us
 ## Setup
 1. Install [GNU Stow](https://www.gnu.org/software/stow/)
 2. Clone the repository into your home folder\
-`git clone --recurse-submodules https://github.com/mham-z/dotfiles ~/dotfiles/`\
-Aster, the shell built with Astal, is included as a submodule so you **must** use `--recurse-submodules`
-3. Change directories and stow\
+`git clone --recurse-submodules https://github.com/mham-z/hyprland-dotfiles ~/dotfiles/`
+1. Change directories and stow\
 `cd ~/dotfiles/ && ./stow.sh`\
 This symlinks everything in the dotfiles repository.
 > [!WARNING]
